@@ -1,10 +1,12 @@
+#### The test was done on ceph with these parrameters
+
 > - The ceph cluster consists of 8 Nodes.
 > - One 7.68TB SAS SSD disk on each node
 > - 2 OSD services are running on each disk. (16 OSDs in POOL)
 > - CPU Frequency of nodes are 2.60GHZ and 2.70GHZ
 > - Three mon services in total
 > - Network consists of 10GB/ps interfaces in bonding. Bonding with 40GP/ps on each node.
-> - There are three different POOLS on same disks, each POOL is run with different Plugin.
+> - There are 4 different POOLS on same disks, each POOL is run with different Plugin.
 > - OMAP with SASSSD in table below means that OMAP is located on the POOL (with replica N 3) with same disks., OMAP with PCISSD means that OMAP is located on the POOL (with replica N 3) with different PCISSD disks.
 > - Where there is not an OMAP information included that means OMAP is on SASSSD
 > - Tests where done from virtual machine (Kernel 5.19) with disabled rbd cache
