@@ -1,3 +1,14 @@
+> - The ceph cluster consists of 8 Nodes.
+> - 7.68TB SAS SSD on each node
+> - 2 OSD services are running on each disk. (16 OSDs in POOL)
+> - CPU Frequency of nodes are 2.60GHZ and 2.70GHZ
+> - Network consists of 10GB/ps interfaces in bonding. Bonding with 40GP/ps on each node.
+> - There are three different POOLS on same disks, each POOL is run with different Plugin.
+> - OMAP with SASSSD in table below means that OMAP is located on the POOL (with replica N 3) with same disks., OMAP with PCISSD means that OMAP is located on the POOL (with replica N 3) with different PCISSD disks.
+> - Where there is not an OMAP information included that means OMAP is on SASSSD
+> - Tests where done from virtual machine (Kernel 5.19) with disabled rbd cache
+
+
 ##### Sequencial read 1mb single thread
 ```bash
 fio -ioengine=libaio -direct=1 -invalidate=1 -name=Seqread -bs=1m  -iodepth=1 -rw=read -size=10G -filename=/dev/sdX
